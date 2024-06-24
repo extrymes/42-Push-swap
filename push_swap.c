@@ -16,8 +16,8 @@ int	main(int ac, char **av)
 {
 	t_stack	stcA;
 
-	if (ac != 2)
-		return (ft_print_error("Invalid argument"), 1);
+	if (ac < 2)
+		return (0);
 	stcA = ft_parse_str(av[1]);
 	if (!stcA.stack)
 		return (1);
