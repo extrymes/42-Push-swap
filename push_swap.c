@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	stack_a = ft_tab_to_stack(tab, size);
 	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
-		ft_throw_error();
+		return (ft_free_stack(stack_a), free(tab), ft_throw_error(), 1);
 	*stack_b = NULL;
 	return (ft_free_stack(stack_a), free(stack_b), 0);
 }

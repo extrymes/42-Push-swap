@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:15 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/03 23:28:03 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/04 00:46:40 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_check_str(char *s)
 	{
 		if ((s[i] != ' ' && s[i] != '+' && s[i] != '-' && !ft_isdigit(s[i]))
 			|| ((s[i] == '+' || s[i] == '-') && !ft_isdigit(s[i + 1])))
-			ft_throw_error();
+			return (0);
 		i++;
 	}
 	nums = 0;
@@ -36,8 +36,6 @@ int	ft_check_str(char *s)
 		while (s[i] && s[i] == ' ')
 			i++;
 	}
-	if (nums == 0)
-		ft_throw_error();
 	return (nums);
 }
 
@@ -56,7 +54,9 @@ int	*ft_check_args(int ac, char **av, int size)
 	while (i < ac)
 	{
 		nums = ft_check_str(av[i]);
-		if (nums == 1)
+		if (nums == 0)
+			return (free(tab), ft_throw_error(), NULL);
+		else if (nums == 1)
 			tab[j] = ft_atoi(av[i], tab);
 		else
 			ft_split_nums(av[i], j, tab);

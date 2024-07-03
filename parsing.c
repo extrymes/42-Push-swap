@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:16:53 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/03 23:42:42 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/04 01:00:54 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_stack	**ft_tab_to_stack(int *tab, int size)
 	while (i >= 0)
 	{
 		new_node = ft_init_stack(tab[i]);
+		if (!new_node)
+			return (ft_free_stack(stack_a), free(tab), ft_throw_error(), NULL);
 		new_node->next = ptr;
 		ptr = new_node;
 		stack_a[i] = ptr;
@@ -40,6 +42,7 @@ t_stack	**ft_tab_to_stack(int *tab, int size)
 int	ft_count_nums(int ac, char **av)
 {
 	int	total;
+	int	nums;
 	int	i;
 
 	total = 0;
@@ -48,7 +51,10 @@ int	ft_count_nums(int ac, char **av)
 	{
 		if (!av[i][0])
 			ft_throw_error();
-		total += ft_check_str(av[i]);
+		nums = ft_check_str(av[i]);
+		if (nums == 0)
+			ft_throw_error();
+		total += nums;
 		i++;
 	}
 	return (total);
@@ -60,6 +66,8 @@ void	ft_split_nums(char *str, int idx, int *tab)
 	int		i;
 
 	res = ft_split(str, ' ');
+	if (!res)
+		return (free(tab), ft_throw_error());
 	i = 0;
 	while (res[i])
 		tab[idx++] = ft_atoi(res[i++], tab);
