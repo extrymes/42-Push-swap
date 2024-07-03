@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/21 13:48:42 by sabras           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:42:15 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static	size_t	ft_count_tabs(char *str, char sep)
 {

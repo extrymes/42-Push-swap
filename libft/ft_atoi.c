@@ -6,14 +6,16 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:55:14 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/21 11:29:19 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/03 23:29:58 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *s)
+#include "../push_swap.h"
+
+int	ft_atoi(char *s, int *tab)
 {
-	int	n;
-	int	sign;
+	int long	n;
+	int			sign;
 
 	while (*s == ' ' || (*s >= 9 && *s <= 13))
 		s++;
@@ -28,6 +30,8 @@ int	ft_atoi(char *s)
 	while (*s >= '0' && *s <= '9')
 	{
 		n = n * 10 + (*s - '0');
+		if ((n * sign > 2147483647) || (n * sign < -2147483648))
+			return (free(tab), ft_throw_error(), 0);
 		s++;
 	}
 	return (n * sign);

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:50:34 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/21 11:29:33 by sabras           ###   ########.fr       */
+/*   Updated: 2024/06/30 20:08:27 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	write(1, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }

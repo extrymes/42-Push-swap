@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 22:56:21 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/21 11:27:03 by sabras           ###   ########.fr       */
+/*   Created: 2024/05/07 18:36:42 by sabras            #+#    #+#             */
+/*   Updated: 2024/06/30 20:14:41 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strdup(char *s)
 {
-	write(1, &c, 1);
+	char	*str;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
