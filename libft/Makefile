@@ -1,4 +1,11 @@
-SRCS = ft_putchar.c ft_putstr.c ft_strlen.c ft_atoi.c ft_split.c ft_isdigit.c
+SRCS = ft_strlen.c ft_putstr_fd.c ft_strdup.c \
+	ft_isdigit.c ft_atoi.c ft_split.c
+
+PRINTF_DIR = ft_printf
+PRINTF_FILES = ft_printf.c srcs/ft_putchar.c srcs/ft_putstr.c \
+	srcs/ft_puthexa.c srcs/ft_putptr.c srcs/ft_putint.c srcs/ft_putuint.c
+
+SRCS += $(addprefix $(PRINTF_DIR)/,$(PRINTF_FILES))
 
 OBJS = $(SRCS:.c=.o)
 
