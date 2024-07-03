@@ -6,26 +6,48 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:20:20 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/24 14:48:34 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/03 23:51:58 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
-#include "includes/libft.h"
-#include "includes/colors.h"
+#include "push_swap.h"
 
-t_stack	ft_init_stack(void)
+void	ft_set_indexes(t_stack **stack_a, int *tab, int size)
 {
-	t_stack	stc;
+	t_stack	*ptr;
+	int		i;
 
-	stc.stack = NULL;
-	stc.size = 0;
-	return (stc);
+	ptr = *stack_a;
+	i = 0;
+	while (ptr)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (tab[i] == ptr->value)
+				ptr->index = i;
+			i++;
+		}
+		ptr = ptr->next;
+	}
 }
 
-void	ft_print_error(char *error)
+void	ft_sort_tab(int *tab, int size)
 {
-	ft_putstr(RED "Error\n");
-	ft_putstr(error);
-	ft_putstr("\n" RESET);
+	int	i;
+	int	tmp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			i = 0;
+		}
+		else
+			i++;
+	}
 }

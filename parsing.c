@@ -6,95 +6,64 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:16:53 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/24 15:11:59 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/03 23:42:42 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
-#include "includes/libft.h"
+#include "push_swap.h"
 
-static t_stack	ft_convert_tab(char **tab);
-static int		ft_check_tab(char **tab);
-static int		ft_get_tab_size(char **tab);
-static void		ft_free_tab(char **tab);
-
-t_stack	ft_parse_str(char *str)
+t_stack	**ft_tab_to_stack(int *tab, int size)
 {
-	t_stack	a;
-	char	**tab;
+	t_stack	**stack_a;
+	t_stack	*new_node;
+	t_stack	*ptr;
+	int		i;
 
-	a = ft_init_stack();
-	tab = ft_split(str, ' ');
-	if (!tab)
-		return (ft_print_error("Failed to allocate memory for tab"), a);
-	if (!tab[0])
-		return (ft_print_error("The stack is empty"), a);
-	if (!ft_check_tab(tab))
-		return (ft_print_error("The stack must contain numbers only"),
-			ft_free_tab(tab), a);
-	a = ft_convert_tab(tab);
-	if (!a.stack)
-		return (ft_free_tab(tab), a);
-	ft_free_tab(tab);
-	return (a);
+	stack_a = malloc(size * sizeof(t_stack *));
+	if (!stack_a)
+		return (free(tab), ft_throw_error(), NULL);
+	ptr = NULL;
+	i = size - 1;
+	while (i >= 0)
+	{
+		new_node = ft_init_stack(tab[i]);
+		new_node->next = ptr;
+		ptr = new_node;
+		stack_a[i] = ptr;
+		i--;
+	}
+	ft_sort_tab(tab, size);
+	ft_set_indexes(stack_a, tab, size);
+	return (free(tab), stack_a);
 }
 
-static t_stack	ft_convert_tab(char **tab)
+int	ft_count_nums(int ac, char **av)
 {
-	t_stack	a;
+	int	total;
 	int	i;
 
-	a.stack = malloc(ft_get_tab_size(tab) * sizeof(int));
-	if (!a.stack)
-		return (ft_print_error("Failed to allocate memory for stack"), a);
-	i = 0;
-	while (tab[i])
+	total = 0;
+	i = 1;
+	while (i < ac)
 	{
-		a.stack[i] = ft_atoi(tab[i]);
+		if (!av[i][0])
+			ft_throw_error();
+		total += ft_check_str(av[i]);
 		i++;
 	}
-	a.size = i;
-	return (a);
+	return (total);
 }
 
-static int	ft_check_tab(char **tab)
+void	ft_split_nums(char *str, int idx, int *tab)
 {
-	int	i;
-	int	j;
+	char	**res;
+	int		i;
 
+	res = ft_split(str, ' ');
 	i = 0;
-	while (tab[i])
-	{
-		j = 0;
-		if (tab[i][j] == '+' || tab[i][j] == '-')
-			j++;
-		while (tab[i][j])
-		{
-			if (!ft_isdigit(tab[i][j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-static int	ft_get_tab_size(char **tab)
-{
-	int	size;
-
-	size = 0;
-	while (tab[size])
-		size++;
-	return (size);
-}
-
-static void	ft_free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
+	while (res[i])
+		tab[idx++] = ft_atoi(res[i++], tab);
+	while (--i >= 0)
+		free(res[i]);
+	free(res);
 }

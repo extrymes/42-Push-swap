@@ -6,33 +6,80 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:15 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/24 15:01:53 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/03 23:28:03 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
-static int	ft_check_duplicates(t_stack stc);
-
-int	ft_check_stack(t_stack stc)
+int	ft_check_str(char *s)
 {
-	if (!ft_check_duplicates(stc))
-		return (ft_print_error("The stack contains duplicate numbers"), 0);
-	return (1);
+	int	nums;
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if ((s[i] != ' ' && s[i] != '+' && s[i] != '-' && !ft_isdigit(s[i]))
+			|| ((s[i] == '+' || s[i] == '-') && !ft_isdigit(s[i + 1])))
+			ft_throw_error();
+		i++;
+	}
+	nums = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] != ' ')
+			i++;
+		if (s[i - 1] && s[i - 1] != ' ')
+			nums++;
+		while (s[i] && s[i] == ' ')
+			i++;
+	}
+	if (nums == 0)
+		ft_throw_error();
+	return (nums);
 }
 
-static int	ft_check_duplicates(t_stack stc)
+int	*ft_check_args(int ac, char **av, int size)
+{
+	int	*tab;
+	int	nums;
+	int	i;
+	int	j;
+
+	tab = malloc(size * sizeof(int));
+	if (!tab)
+		ft_throw_error();
+	i = 1;
+	j = 0;
+	while (i < ac)
+	{
+		nums = ft_check_str(av[i]);
+		if (nums == 1)
+			tab[j] = ft_atoi(av[i], tab);
+		else
+			ft_split_nums(av[i], j, tab);
+		i++;
+		j += nums;
+	}
+	if (!ft_check_duplicates(tab, size))
+		return (free(tab), ft_throw_error(), NULL);
+	return (tab);
+}
+
+int	ft_check_duplicates(int *tab, int size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < stc.size)
+	while (i < size)
 	{
-		j = 0;
-		while (j < i)
+		j = i + 1;
+		while (j < size)
 		{
-			if (stc.stack[i] == stc.stack[j])
+			if (tab[i] == tab[j])
 				return (0);
 			j++;
 		}
