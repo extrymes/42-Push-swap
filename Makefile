@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = 	push_swap.c parsing.c checkers.c utils.c
+SRCS = 	push_swap.c stack.c checkers.c parsing.c utils.c error.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -18,6 +18,8 @@ RED = \033[31m
 GREEN = \033[32m
 YELLOW = \033[33m
 BLUE = \033[34m
+MAGENTA = \033[35m
+CYAN = \033[36m
 RESET = \033[0m
 
 %.o: %.c
