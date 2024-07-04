@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:09 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/03 23:59:34 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:19:30 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_stack
 }	t_stack;
 
 // Stack
-t_stack	*ft_init_stack(int content);
-int		ft_stack_size(t_stack *lst);
-void	ft_stack_add_front(t_stack **lst, t_stack *new);
+t_stack	*ft_init_stack(int value);
+int		ft_stack_size(t_stack *stack);
+void	ft_stack_add_front(t_stack **stack, t_stack *node);
 void	ft_free_stack(t_stack **stack);
 
 // Checkers
@@ -40,8 +40,8 @@ int		ft_count_nums(int ac, char **av);
 void	ft_split_nums(char *str, int idx, int *tab);
 
 // Utils
-void	ft_set_indexes(t_stack **stack_a, int *tab, int size);
 void	ft_sort_tab(int *tab, int size);
+void	ft_set_indexes(t_stack **stack_a, int *tab, int size);
 
 // Error
 void	ft_throw_error(void);

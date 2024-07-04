@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:19:55 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/03 23:23:37 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:18:23 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,29 @@ t_stack	*ft_init_stack(int value)
 int	ft_stack_size(t_stack *stack)
 {
 	t_stack	*ptr;
-	int		i;
+	int		size;
 
-	i = 0;
+	size = 0;
 	ptr = stack;
 	while (ptr)
 	{
-		i++;
+		size++;
 		ptr = ptr->next;
 	}
-	return (i);
+	return (size);
 }
 
-void	ft_stack_add_front(t_stack **stack, t_stack *new)
+void	ft_stack_add_front(t_stack **stack, t_stack *node)
 {
 	if (!*stack)
 	{
-		*stack = new;
+		*stack = node;
 		(*stack)->next = NULL;
 	}
 	else
 	{
-		new->next = *stack;
-		*stack = new;
+		node->next = *stack;
+		*stack = node;
 	}
 }
 

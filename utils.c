@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_set_indexes(t_stack **stack_a, int *tab, int size)
-{
-	t_stack	*ptr;
-	int		i;
-
-	ptr = *stack_a;
-	i = 0;
-	while (ptr)
-	{
-		i = 0;
-		while (i < size)
-		{
-			if (tab[i] == ptr->value)
-				ptr->index = i;
-			i++;
-		}
-		ptr = ptr->next;
-	}
-}
-
 void	ft_sort_tab(int *tab, int size)
 {
 	int	i;
@@ -49,5 +29,25 @@ void	ft_sort_tab(int *tab, int size)
 		}
 		else
 			i++;
+	}
+}
+
+void	ft_set_indexes(t_stack **stack_a, int *tab, int size)
+{
+	t_stack	*ptr;
+	int		i;
+
+	ptr = *stack_a;
+	i = 0;
+	while (ptr)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (tab[i] == ptr->value)
+				ptr->index = i;
+			i++;
+		}
+		ptr = ptr->next;
 	}
 }
