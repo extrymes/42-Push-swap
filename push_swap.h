@@ -39,6 +39,13 @@ t_stack	**ft_tab_to_stack(int *tab, int size);
 int		ft_count_nums(int ac, char **av);
 void	ft_split_nums(char *str, int idx, int *tab);
 
+// Sorting
+void	ft_sort_3_nums(t_stack **stack);
+void	ft_sort_4_nums(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_5_nums(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_more_5_nums(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
+
 // Utils
 void	ft_sort_tab(int *tab, int size);
 void	ft_set_indexes(t_stack **stack_a, int *tab, int size);
