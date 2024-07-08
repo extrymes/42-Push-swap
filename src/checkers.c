@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:15 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/04 00:46:40 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:54:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_check_str(char *s)
 {

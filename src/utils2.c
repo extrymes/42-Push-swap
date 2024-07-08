@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:09:34 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 11:24:26 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:53:45 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_find_max(t_stack **stack)
 {

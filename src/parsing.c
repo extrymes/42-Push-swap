@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:16:53 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/04 01:00:54 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:53:36 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	**ft_tab_to_stack(int *tab, int size)
 {

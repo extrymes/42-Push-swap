@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:17:14 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 10:47:08 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:53:38 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	ft_rotate_reverse(t_stack **stack);
 

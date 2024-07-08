@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:19:55 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/04 03:18:23 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:53:42 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack	*ft_init_stack(int value)
 {

@@ -6,11 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:20:20 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/04 03:17:12 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 16:53:43 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_sort_tab(int *tab, int size)
 {
