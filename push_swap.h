@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:09 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 11:41:35 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 11:43:00 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ void	ft_sort_4_nums(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_5_nums(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_more_5_nums(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
+
+// Rules
+void	ft_swap_stack(t_stack **stack, char *op);
+void	ft_push_stack(t_stack **stack_from, t_stack **stack_to, char *op);
+void	ft_rotate_stack(t_stack **stack_a, t_stack **stack_b, char *op);
+void	ft_rotate_reverse_stack(t_stack **stack_a, t_stack **stack_b, char *op);
 
 // Utils
 void	ft_sort_tab(int *tab, int size);
