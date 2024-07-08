@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:19:59 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/03 23:48:04 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/04 03:07:10 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	main(int ac, char **av)
 	if (!stack_b)
 		return (ft_free_stack(stack_a), free(tab), ft_throw_error(), 1);
 	*stack_b = NULL;
+	if (!ft_is_sorted(stack_a))
+		ft_sort_stacks(stack_a, stack_b);
 	return (ft_free_stack(stack_a), free(stack_b), 0);
 }
