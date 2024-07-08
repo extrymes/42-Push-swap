@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:09 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/04 03:19:30 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/08 11:41:35 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,16 @@ void	ft_split_nums(char *str, int idx, int *tab);
 // Utils
 void	ft_sort_tab(int *tab, int size);
 void	ft_set_indexes(t_stack **stack_a, int *tab, int size);
+int		ft_is_sorted(t_stack **stack);
+int		ft_is_max(t_stack **stack, t_stack *node);
+int		ft_is_min(t_stack **stack, t_stack *node);
+
+// Utils 2
+int		ft_find_max(t_stack	**stack);
+int		ft_find_min(t_stack	**stack);
+int		ft_calculate_range(t_stack **stack);
+void	ft_repush_to_stack(t_stack **stack_a, t_stack **stack_b);
+void	ft_swap_node(t_stack *node);
 
 // Error
 void	ft_throw_error(void);
