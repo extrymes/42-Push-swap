@@ -1,18 +1,18 @@
 NAME = push_swap
 
-SRCS = 	push_swap.c stack.c checkers.c parsing.c utils.c error.c \
-	rules.c sorting.c utils2.c
+SRC_DIR = src
+SRC_FILES = stack.c checkers.c parsing.c sorting.c \
+	rules.c utils.c utils2.c error.c
+SRCS = push_swap.c $(addprefix $(SRC_DIR)/,$(SRC_FILES))
 
 OBJS = $(SRCS:.c=.o)
-
-HDR_DIR = includes
 
 LIBFT_DIR = libft
 LIBFT_FILE = libft.a
 LIBFT = $(addprefix $(LIBFT_DIR)/,$(LIBFT_FILE))
 
 CFLAGS = -Wall -Wextra -Werror
-CC = cc $(CFLAGS) -g -I $(HDR_DIR)
+CC = cc $(CFLAGS) -g
 
 GRAY = \033[30m
 RED = \033[31m
