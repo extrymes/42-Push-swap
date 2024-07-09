@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:18:04 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 16:53:40 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 13:26:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_sort_3_nums(t_stack **stack)
 	if (ft_is_sorted(stack))
 		return ;
 	if (ft_is_max(stack, *stack))
-		ft_rotate_stack(stack, NULL, "ra\n");
+		ft_rotate_stack(stack, "ra\n");
 	else if (ft_is_max(stack, (*stack)->next))
-		ft_rotate_reverse_stack(stack, NULL, "rra\n");
+		ft_rotate_reverse_stack(stack, "rra\n");
 	if (!ft_is_sorted(stack))
 		ft_swap_stack(stack, "sa\n");
 }
@@ -39,10 +39,10 @@ void	ft_sort_4_nums(t_stack **stack_a, t_stack **stack_b)
 			break ;
 		}
 		if (p < 3)
-			ft_rotate_stack(stack_a, NULL, "ra\n");
+			ft_rotate_stack(stack_a, "ra\n");
 		else
 		{
-			ft_rotate_reverse_stack(stack_a, NULL, "rra\n");
+			ft_rotate_reverse_stack(stack_a, "rra\n");
 			ptr = *stack_a;
 		}
 	}
@@ -65,10 +65,10 @@ void	ft_sort_5_nums(t_stack **stack_a, t_stack **stack_b)
 			break ;
 		}
 		if (p < 3)
-			ft_rotate_stack(stack_a, NULL, "ra\n");
+			ft_rotate_stack(stack_a, "ra\n");
 		else
 		{
-			ft_rotate_reverse_stack(stack_a, NULL, "rra\n");
+			ft_rotate_reverse_stack(stack_a, "rra\n");
 			ptr = *stack_a;
 		}
 	}
@@ -88,15 +88,15 @@ void	ft_sort_more_5_nums(t_stack **stack_a, t_stack **stack_b)
 		if ((*stack_a)->index < size)
 		{
 			ft_push_stack(stack_a, stack_b, "pb\n");
-			ft_rotate_stack(NULL, stack_b, "rb\n");
+			ft_rotate_stack(stack_b, "rb\n");
 		}
 		else if ((*stack_a)->index <= (size + range))
 			ft_push_stack(stack_a, stack_b, "pb\n");
 		else
-			ft_rotate_stack(stack_a, NULL, "ra\n");
+			ft_rotate_stack(stack_a, "ra\n");
 	}
 	while (*stack_b)
-		ft_repush_to_stack(stack_a, stack_b);
+		ft_repush_to_stack_a(stack_a, stack_b);
 }
 
 void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b)

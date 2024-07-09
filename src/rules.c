@@ -6,13 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:17:14 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 16:53:38 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 13:18:29 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static void	ft_rotate_reverse(t_stack **stack);
 
 void	ft_swap_stack(t_stack **stack, char *op)
 {
@@ -31,54 +29,34 @@ void	ft_push_stack(t_stack **stack_from, t_stack **stack_to, char *op)
 	ft_printf(op);
 }
 
-void	ft_rotate_stack(t_stack **stack_a, t_stack **stack_b, char *op)
+void	ft_rotate_stack(t_stack **stack, char *op)
 {
 	t_stack	*ptr;
 
-	if (stack_a)
+	ptr = *stack;
+	while (ptr)
 	{
-		ptr = *stack_a;
-		while (ptr)
-		{
-			ft_swap_node(ptr);
-			ptr = ptr->next;
-		}
-	}
-	if (stack_b)
-	{
-		ptr = *stack_b;
-		while (ptr)
-		{
-			ft_swap_node(ptr);
-			ptr = ptr->next;
-		}
+		ft_swap_node(ptr);
+		ptr = ptr->next;
 	}
 	ft_printf(op);
 }
 
-void	ft_rotate_reverse_stack(t_stack **stack_a, t_stack **stack_b, char *op)
-{
-	if (stack_a)
-		ft_rotate_reverse(stack_a);
-	if (stack_b)
-		ft_rotate_reverse(stack_b);
-	ft_printf(op);
-}
-
-static void	ft_rotate_reverse(t_stack **stack)
+void	ft_rotate_reverse_stack(t_stack **stack, char *op)
 {
 	int		size;
-	t_stack	*temp1;
-	t_stack	*temp2;
+	t_stack	*ptr;
+	t_stack	*tmp;
 
 	size = ft_stack_size(*stack);
-	temp1 = *stack;
+	ptr = *stack;
 	while (size - 1 > 1)
 	{
-		temp1 = temp1->next;
+		ptr = ptr->next;
 		size--;
 	}
-	temp2 = temp1->next;
-	temp1->next = NULL;
-	ft_stack_add_front(stack, temp2);
+	tmp = ptr->next;
+	ptr->next = NULL;
+	ft_stack_add_front(stack, tmp);
+	ft_printf(op);
 }

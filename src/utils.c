@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:20:20 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 16:53:43 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 13:00:03 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_set_indexes(t_stack **stack_a, int *tab, int size)
 	int		i;
 
 	ptr = *stack_a;
-	i = 0;
 	while (ptr)
 	{
 		i = 0;

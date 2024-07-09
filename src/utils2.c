@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 19:09:34 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 16:53:45 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 13:26:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_calculate_range(t_stack **stack)
 	return (45);
 }
 
-void	ft_repush_to_stack(t_stack **stack_a, t_stack **stack_b)
+void	ft_repush_to_stack_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 	int	i;
@@ -71,10 +71,10 @@ void	ft_repush_to_stack(t_stack **stack_a, t_stack **stack_b)
 	i = ft_find_max(stack_b);
 	if (i <= (size / 2) + 1)
 		while (--i)
-			ft_rotate_stack(NULL, stack_b, "rb\n");
+			ft_rotate_stack(stack_b, "rb\n");
 	else if (i > (size / 2) + 1)
 		while (i++ <= size)
-			ft_rotate_reverse_stack(NULL, stack_b, "rrb\n");
+			ft_rotate_reverse_stack(stack_b, "rrb\n");
 	ft_push_stack(stack_b, stack_a, "pa\n");
 }
 

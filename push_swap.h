@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:09 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 11:43:00 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 13:26:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_free_stack(t_stack **stack);
 // Checkers
 int		ft_check_str(char *s);
 int		*ft_check_args(int ac, char **av, int size);
-int		ft_check_duplicates(int *tab, int size);
 
 // Parsing
 t_stack	**ft_tab_to_stack(int *tab, int size);
@@ -49,8 +48,8 @@ void	ft_sort_stacks(t_stack **stack_a, t_stack **stack_b);
 // Rules
 void	ft_swap_stack(t_stack **stack, char *op);
 void	ft_push_stack(t_stack **stack_from, t_stack **stack_to, char *op);
-void	ft_rotate_stack(t_stack **stack_a, t_stack **stack_b, char *op);
-void	ft_rotate_reverse_stack(t_stack **stack_a, t_stack **stack_b, char *op);
+void	ft_rotate_stack(t_stack **stack, char *op);
+void	ft_rotate_reverse_stack(t_stack **stack, char *op);
 
 // Utils
 void	ft_sort_tab(int *tab, int size);
@@ -63,7 +62,7 @@ int		ft_is_min(t_stack **stack, t_stack *node);
 int		ft_find_max(t_stack	**stack);
 int		ft_find_min(t_stack	**stack);
 int		ft_calculate_range(t_stack **stack);
-void	ft_repush_to_stack(t_stack **stack_a, t_stack **stack_b);
+void	ft_repush_to_stack_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap_node(t_stack *node);
 
 // Error

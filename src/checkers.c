@@ -6,11 +6,13 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 11:15:15 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/08 16:54:34 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/09 12:49:23 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static int	ft_check_duplicates(int *tab, int size);
 
 int	ft_check_str(char *s)
 {
@@ -68,7 +70,7 @@ int	*ft_check_args(int ac, char **av, int size)
 	return (tab);
 }
 
-int	ft_check_duplicates(int *tab, int size)
+static int	ft_check_duplicates(int *tab, int size)
 {
 	int	i;
 	int	j;
