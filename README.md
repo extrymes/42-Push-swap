@@ -1,18 +1,24 @@
-<div align="center">
-	<img src="https://i.imgur.com/y2bQtnZ.png" width="250" height="250" alt="Logo" />
-	<h3>42-Push-swap</h3>
-	<p>
-		Project push-swap of 42 School
-		<br />
-		<a href="https://github.com/extrymes/42-Push-swap/blob/main/en.subject.pdf"><b>Read the subject »</b></a>
-		<br />
-		<br />
-	</p>
-	<p>
-		<img src="https://img.shields.io/github/languages/code-size/extrymes/42-Push-swap?color=steelblue" alt="GitHub code size in bytes" />
-		<img src="https://img.shields.io/github/languages/count/extrymes/42-Push-swap?color=mediumpurple" alt="Code language count" />
-		<img src="https://img.shields.io/github/languages/top/extrymes/42-Push-swap?color=mediumseagreen" alt="GitHub top language" />
-		<img src="https://img.shields.io/github/commit-activity/t/extrymes/42-Push-swap?color=cadetblue" alt="GitHub commit count" />
-		<img src="https://img.shields.io/github/last-commit/extrymes/42-Push-swap?color=salmon" alt="GitHub last commit" />
-	</p>
-</div>
+<img src="https://i.imgur.com/y2bQtnZ.png" width="150" height="150" alt="Logo" />
+
+# 42-Push-swap
+## Overview
+The **push_swap** project at **42 School** is a **sorting algorithm** that requires developing a program to sort a stack of integers using a predefined set of operations. The goal is to sort the stack with the fewest possible moves. This project emphasizes algorithmic thinking, efficiency, and optimization, as well as gaining a deeper understanding of data structures such as stacks.
+
+## Getting started
+This project is compatible on Linux and macOS.
+> If you are on macOS, make sure you have installed **Xcode Command Line Tools**.
+1. Clone this repository
+```bash
+git clone https://github.com/extrymes/42-Push-swap.git
+cd 42-Push-swap
+```
+2. Compile and launch the program
+```bash
+make
+./push_swap 2 1 3 6 5 8 42
+```
+
+## Contributing
+We welcome contributions from everyone! Whether you're fixing bugs, adding new features, improving documentation, or simply sharing your ideas, your input is greatly appreciated.
+
+Thanks for visiting and happy coding!
